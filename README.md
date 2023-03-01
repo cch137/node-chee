@@ -2,6 +2,7 @@
 
 ```
 npm init --scope=cch137
+npm i --save mysql express
 
 ```
 

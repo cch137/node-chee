@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const chee = require('@cch137/chee');
+const { execSync } = require('child_process');
 
 
 let CONFIG_PATH;
@@ -42,4 +43,31 @@ chee.walkdir = (_dir, type=1) => {
   return filepathList;
 };
 
+/**
+ * To execute a system command
+ * @param {String} command 
+ * @returns 
+ */
+chee.sysExec = (command) => {
+  try {
+    const message = execSync(command, {encoding: 'utf8'});
+    console.log(message);
+    return message;
+  } catch (e) {
+    console.error(e.stdout);
+    return e.stdout;
+  }
+}
+
 module.exports = chee;
+
+fetch('https://www.npmjs.com/package/@cch137/node-chee')
+.then(res => res.text())
+.then(text => {
+  const currentVersion = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'))).version;
+  const latestVersion = /Latest version: (\d+.\d+.\d+),/.exec(text)[1];
+  if (currentVersion != latestVersion) {
+    console.log('Installing the latest version of @cch137/node-chee...');
+    chee.sysExec(`npm i @cch137/node-chee@${latestVersion}`);
+  }
+});

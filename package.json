@@ -1,10 +1,10 @@
 {
   "name": "@cch137/node-chee",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "node-chee",
   "main": "index.js",
   "scripts": {
-    "test": "node ."
+    "test": "nodemon ."
   },
   "repository": {
     "type": "git",
