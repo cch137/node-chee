@@ -61,11 +61,11 @@ chee.sysExec = (command) => {
 
 module.exports = chee;
 
-fetch('https://www.npmjs.com/package/@cch137/node-chee')
-.then(res => res.text())
-.then(text => {
+fetch('https://registry.npmjs.org/@cch137/node-chee/latest')
+.then(res => res.json())
+.then(data => {
   const currentVersion = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'))).version;
-  const latestVersion = /Latest version: (\d+.\d+.\d+),/.exec(text)[1];
+  const latestVersion = data.version;
   if (currentVersion === latestVersion) {
     console.log(`Running @cch137/node-chee@${currentVersion}`);
   } else {
