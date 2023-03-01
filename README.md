@@ -1,6 +1,7 @@
 # cch137
 
 ```
+npm uninstall @cch137/node-chee
 npm i @cch137/node-chee
 
 ```
