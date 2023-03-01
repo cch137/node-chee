@@ -68,7 +68,7 @@ fetch('https://registry.npmjs.org/@cch137/node-chee/latest')
   const latestVersion = data.version;
   if (currentVersion != latestVersion) {
     throw new Error (
-      `Please use the following command to install the latest version of @cch137/node-chee:\n`
+      `Please use the following commands to install the latest version of @cch137/node-chee:\n`
       + `npm uninstall @cch137/node-chee; npm i @cch137/node-chee@${latestVersion}\n`
     );
   }
