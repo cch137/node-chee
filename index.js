@@ -66,10 +66,10 @@ fetch('https://registry.npmjs.org/@cch137/node-chee/latest')
 .then(data => {
   const currentVersion = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'))).version;
   const latestVersion = data.version;
-  if (currentVersion === latestVersion) {
-    console.log(`Running @cch137/node-chee@${currentVersion}`);
-  } else {
-    console.log('Installing the latest version of @cch137/node-chee...');
-    chee.sysExec(`npm uninstall @cch137/node-chee; npm i @cch137/node-chee@${latestVersion}`);
+  if (currentVersion != latestVersion) {
+    throw new Error (
+      `Please use the following command to install the latest version of @cch137/node-chee:\n`
+      + `npm uninstall @cch137/node-chee; npm i @cch137/node-chee@${latestVersion}\n`
+    );
   }
 });
