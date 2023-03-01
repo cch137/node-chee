@@ -1,6 +1,11 @@
 # cch137
 
 ```
+npm i @cch137/node-chee
+
+```
+
+```
 npm init --scope=cch137
 npm i --save mysql express
 
