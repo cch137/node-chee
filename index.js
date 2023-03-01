@@ -44,6 +44,13 @@ const walkdir = (_dir, type=1) => {
 };
 chee.walkdir = walkdir;
 
+const promiseDir = (dirname) => {
+  if (!fs.existsSync(dirname)) {
+    fs.mkdirSync(dirname, { recursive: true });
+  }
+}
+chee.promiseDir = promiseDir;
+
 /**
  * To execute a system command
  * @param {String} command 
