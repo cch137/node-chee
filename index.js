@@ -5,7 +5,7 @@ const chee = require('@cch137/chee');
 
 let CONFIG_PATH;
 
-Object.defineProperty(chee, 'value', {
+Object.defineProperty(chee, 'CONFIG_PATH', {
   get() {
     return CONFIG_PATH;;
   },
