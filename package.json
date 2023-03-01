@@ -1,0 +1,25 @@
+{
+  "name": "@cch137/chee",
+  "version": "1.0.0",
+  "description": "node-chee",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cch137/node-chee.git"
+  },
+  "keywords": [
+    "node-chee"
+  ],
+  "author": "cch137",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cch137/node-chee/issues"
+  },
+  "homepage": "https://github.com/cch137/node-chee#readme",
+  "dependencies": {
+    "@cch137/chee": "^1.0.17"
+  }
+}
