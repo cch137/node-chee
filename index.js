@@ -67,7 +67,7 @@ fetch('https://www.npmjs.com/package/@cch137/node-chee')
   const currentVersion = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'))).version;
   const latestVersion = /Latest version: (\d+.\d+.\d+),/.exec(text)[1];
   if (currentVersion === latestVersion) {
-    console.log('@cch137/node-chee is already up to date!');
+    console.log(`Running @cch137/node-chee@${currentVersion}`);
   } else {
     console.log('Installing the latest version of @cch137/node-chee...');
     chee.sysExec(`npm i @cch137/node-chee@${latestVersion}`);
