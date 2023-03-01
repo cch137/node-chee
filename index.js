@@ -70,7 +70,7 @@ fetch('https://registry.npmjs.org/@cch137/node-chee/latest')
     console.log(`Running @cch137/node-chee@${currentVersion}`);
   } else {
     console.log('Installing the latest version of @cch137/node-chee...');
-    chee.sysExec(`npm uninstall @cch137/node-chee`);
+    chee.sysExec('npm uninstall @cch137/node-chee');
     chee.sysExec(`npm i @cch137/node-chee@${latestVersion}`);
   }
 });
