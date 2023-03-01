@@ -19,7 +19,7 @@ Object.defineProperty(chee, 'CONFIG_PATH', {
   }
 });
 
-chee.walkdir = (_dir, type=1) => {
+const walkdir = (_dir, type=1) => {
   _dir = path.resolve(_dir);
   const filepathList = [];
   for (const f of fs.readdirSync(_dir)) {
@@ -27,11 +27,11 @@ chee.walkdir = (_dir, type=1) => {
     const isDir = fs.statSync(itemPath).isDirectory();
     switch (type) {
       case 1: // files only
-        if (isDir) filepathList.push(...chee.walkdir(itemPath));
+        if (isDir) filepathList.push(...walkdir(itemPath));
         else filepathList.push(itemPath);
         break;
       case 0: // files and dirs
-        if (isDir) filepathList.push(...chee.walkdir(itemPath));
+        if (isDir) filepathList.push(...walkdir(itemPath));
         filepathList.push(itemPath);
         break;
       case 2: // dirs only
@@ -42,13 +42,14 @@ chee.walkdir = (_dir, type=1) => {
   };
   return filepathList;
 };
+chee.walkdir = walkdir;
 
 /**
  * To execute a system command
  * @param {String} command 
  * @returns 
  */
-chee.sysExec = (command) => {
+const sysExec = (command) => {
   try {
     const message = execSync(command, {encoding: 'utf8'});
     console.log(message);
@@ -58,6 +59,7 @@ chee.sysExec = (command) => {
     return e.stdout;
   }
 }
+chee.sysExec = sysExec;
 
 module.exports = chee;
 
