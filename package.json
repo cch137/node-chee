@@ -1,5 +1,5 @@
 {
-  "name": "@cch137/chee",
+  "name": "@cch137/node-chee",
   "version": "1.0.0",
   "description": "node-chee",
   "main": "index.js",
