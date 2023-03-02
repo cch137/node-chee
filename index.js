@@ -78,4 +78,5 @@ fetch('https://registry.npmjs.org/@cch137/node-chee/latest')
       + `npm uninstall @cch137/node-chee; npm i @cch137/node-chee@${latestVersion}\n`
     );
   }
-});
+})
+.catch(_ => _);
