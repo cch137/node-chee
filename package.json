@@ -1,6 +1,6 @@
 {
   "name": "@cch137/node-chee",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "node-chee",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/cch137/node-chee#readme",
   "dependencies": {
-    "@cch137/chee": "^1.0.17"
+    "@cch137/chee": "^1.0.18"
   }
 }
